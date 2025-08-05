@@ -1,0 +1,45 @@
+<div class="contact-container">
+  <!-- Left Side -->
+  <div class="contact-left">
+    <img src="assets/contact.jpg" alt="Contact Us" class="hero-img">
+  </div>
+
+  <!-- Right Side -->
+  <div class="contact-right">
+    <h2><i class="fa fa-envelope"></i> Contact Us</h2>
+
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+      <!-- Name -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Full Name</mat-label>
+        <input matInput name="name" ngModel required>
+        <mat-error *ngIf="contactForm.submitted && !contactForm.controls['name']?.valid">Name is required</mat-error>
+      </mat-form-field>
+
+      <!-- Email -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" name="email" ngModel required email>
+        <mat-error *ngIf="contactForm.submitted && !contactForm.controls['email']?.valid">Valid Email required</mat-error>
+      </mat-form-field>
+
+      <!-- Mobile -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput type="tel" name="mobile" ngModel required pattern="^[0-9]{10}$">
+        <mat-error *ngIf="contactForm.submitted && !contactForm.controls['mobile']?.valid">Enter valid 10-digit number</mat-error>
+      </mat-form-field>
+
+      <!-- Message -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Message</mat-label>
+        <textarea matInput name="message" ngModel required></textarea>
+        <mat-error *ngIf="contactForm.submitted && !contactForm.controls['message']?.valid">Message is required</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">
+        <i class="fa fa-paper-plane"></i> Send Message
+      </button>
+    </form>
+  </div>
+</div>

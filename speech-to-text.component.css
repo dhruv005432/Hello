@@ -1,0 +1,28 @@
+.speech-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background: linear-gradient(135deg, #f5f7fa, #e1bee7);
+  overflow-y: auto;
+}
+
+.speech-card {
+  width: 520px;
+  padding: 24px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.textarea-field {
+  width: 100%;
+}

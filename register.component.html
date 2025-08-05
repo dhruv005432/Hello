@@ -1,0 +1,78 @@
+<div class="register-container">
+  <!-- Left Hero -->
+  <div class="hero-section">
+    <h1>Welcome  To Speech-to-Text Website🎉</h1>
+    <p>Your journey starts here!</p>
+    <img src="assets/register.jpg" alt="Hero" />
+  </div>
+
+  <!-- Right Form -->
+  <div class="form-section">
+    <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)">
+      <mat-form-field appearance="outline">
+        <mat-label>Full Name</mat-label>
+        <input matInput name="name" [(ngModel)]="userData.name" required />
+        <button mat-icon-button matSuffix type="button" (click)="startSpeech('name')">
+          <i class="fa fa-microphone"></i>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" name="email" [(ngModel)]="userData.email" required />
+        <button mat-icon-button matSuffix type="button" (click)="startSpeech('email')">
+          <i class="fa fa-microphone"></i>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile</mat-label>
+        <input matInput type="tel" name="mobile" [(ngModel)]="userData.mobile" required />
+        <button mat-icon-button matSuffix type="button" (click)="startSpeech('mobile')">
+          <i class="fa fa-microphone"></i>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="showPassword ? 'text' : 'password'" name="password"
+          [(ngModel)]="userData.password" required />
+        <button mat-icon-button matSuffix type="button" (click)="toggleShowPassword()">
+          <i class="fa" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput [type]="showConfirmPassword ? 'text' : 'password'" [(ngModel)]="confirmPassword"
+          name="confirmPassword" required />
+        <button mat-icon-button matSuffix type="button" (click)="toggleShowConfirmPassword()">
+          <i class="fa" [ngClass]="showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput type="date" name="dob" [(ngModel)]="userData.dob"
+          (change)="calculateAge(userData.dob!)" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" [value]="calculatedAge" readonly />
+      </mat-form-field>
+
+      <input type="file" hidden #filePicker (change)="onImagePicked($event)" />
+      <button mat-button type="button" (click)="filePicker.click()">
+        <i class="fa fa-image"></i> Choose Image
+      </button>
+
+      <div class="image-preview" *ngIf="imagePreview">
+        <img [src]="imagePreview" alt="Preview" />
+      </div>
+
+      <button mat-raised-button color="primary" type="submit">Register</button>
+      <button mat-button type="button" (click)="goToLogin()">Login</button>
+    </form>
+  </div>
+</div>

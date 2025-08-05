@@ -1,0 +1,39 @@
+<div class="history-container">
+  <h2><i class="fa fa-history"></i> Speech History</h2>
+
+  <!-- 🔍 Search -->
+  <input type="text" [(ngModel)]="searchText" placeholder="Search transcripts..." class="search-bar" />
+
+  <div *ngIf="filteredLogs.length === 0" class="empty">
+    <p>No matching entries found.</p>
+  </div>
+
+  <ul *ngIf="filteredLogs.length > 0">
+    <li *ngFor="let log of filteredLogs">
+      <div class="timestamp">
+        🕒 {{ log.timestamp | date:'short' }}
+      </div>
+
+      <div class="text" *ngIf="editId !== log.id">
+        📝 {{ log.text }}
+      </div>
+
+      <!-- ✏️ Edit Mode with Speech-to-Text -->
+      <div *ngIf="editId === log.id">
+        <textarea [(ngModel)]="editText" rows="3"></textarea>
+        <div class="edit-controls">
+          <button (click)="startSpeechUpdate()" class="btn start">🎤 Speak Update</button>
+          <button (click)="stopSpeechUpdate()" class="btn stop">⏹ Stop</button>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button *ngIf="editId !== log.id" class="btn edit" (click)="startEdit(log)">✏️ Update</button>
+        <button *ngIf="editId === log.id" class="btn save" (click)="saveEdit(log)">💾 Save</button>
+        <button *ngIf="editId === log.id" class="btn cancel" (click)="cancelEdit()">❌ Cancel</button>
+        <button class="btn delete" (click)="deleteEntry(log.id)">🗑️ Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>

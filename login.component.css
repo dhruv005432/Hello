@@ -1,0 +1,74 @@
+/* Background */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 1rem;
+}
+
+/* Login Card */
+.login-card {
+  padding: 2rem;
+  width: 400px;
+  max-width: 95%;
+  border-radius: 15px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.login-card h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Form Fields */
+mat-form-field {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+mat-label {
+  font-weight: 500;
+  color: #444;
+}
+
+/* Input Styles */
+input.mat-input-element {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+/* Buttons */
+button {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

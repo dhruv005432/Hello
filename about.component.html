@@ -1,0 +1,26 @@
+<div class="about-container">
+  <h1>About Us</h1>
+  <p>Welcome to our Speech-to-Text Website. Speak, and let your words appear magically!</p>
+
+  <mat-card class="speech-card">
+    <h2>Tell Us About Yourself</h2>
+    <textarea [(ngModel)]="aboutText" rows="6" placeholder="Your speech will appear here..."></textarea>
+
+    <div class="speech-controls">
+      <button mat-raised-button color="primary" (click)="startListening()" [disabled]="isListening">
+        🎤 Start Speaking
+      </button>
+      <button mat-raised-button color="warn" (click)="stopListening()" [disabled]="!isListening">
+        ⏹ Stop
+      </button>
+    </div>
+  </mat-card>
+
+  <div class="about-info">
+    <h3>Our Mission</h3>
+    <p>We aim to make voice the next big input method for the web.</p>
+
+    <h3>Our Vision</h3>
+    <p>Bringing accessible, modern, and innovative speech-driven apps to everyone.</p>
+  </div>
+</div>

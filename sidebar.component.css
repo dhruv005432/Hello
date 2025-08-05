@@ -1,0 +1,39 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 240px;
+  background: linear-gradient(180deg, #2196f3, #21cbf3);
+  color: white;
+  padding: 15px 0;
+}
+
+.logo {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+mat-nav-list a {
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+mat-nav-list a:hover,
+.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+mat-icon {
+  margin-right: 10px;
+}
+
+.content {
+  background: #f5f5f5;
+  min-height: 100vh;
+  padding: 20px;
+}

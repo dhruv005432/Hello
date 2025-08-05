@@ -1,0 +1,26 @@
+<div class="home-container">
+  <!-- Welcome Section -->
+  <div class="welcome-box">
+    <h1>Welcome to Speech‑to‑Text Website 🎤</h1>
+    <p class="slogan">"Your voice, instantly turned into text."</p>
+  </div>
+
+  <!-- Speech to Text Section -->
+  <mat-card class="speech-card">
+    <h2>Try it out below 👇</h2>
+
+    <textarea
+      matInput
+      placeholder="Your speech will appear here..."
+      [(ngModel)]="transcript"
+      rows="8"
+      readonly>
+    </textarea>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="startListening()">Start 🎤</button>
+      <button mat-raised-button color="warn" (click)="stopListening()">Stop ⏹️</button>
+      <button mat-raised-button color="accent" (click)="clearTranscript()">Clear 🗑️</button>
+    </div>
+  </mat-card>
+</div>

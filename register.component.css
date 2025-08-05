@@ -1,0 +1,37 @@
+.register-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.hero-section {
+  flex: 1;
+  background: linear-gradient(to right, #673ab7, #512da8);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-section img {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 2rem;
+  border-radius: 12px;
+}
+
+.form-section {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+mat-form-field {
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.image-preview img {
+  max-width: 150px;
+  border-radius: 8px;
+  margin-top: 1rem;
+}

@@ -1,0 +1,44 @@
+.home-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.welcome-box {
+  margin-bottom: 30px;
+}
+
+.welcome-box h1 {
+  font-size: 2.5rem;
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+.welcome-box .slogan {
+  font-size: 1.2rem;
+  color: #555;
+  font-style: italic;
+}
+
+.speech-card {
+  margin: auto;
+  max-width: 650px;
+  padding: 25px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+textarea {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  resize: none;
+  border: 1px solid #ccc;
+}
+
+.actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}

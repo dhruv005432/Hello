@@ -1,0 +1,52 @@
+<div class="profile-container">
+  <mat-card class="profile-card">
+    <h2><i class="fa fa-user-circle"></i> My Profile</h2>
+
+    <form #profileForm="ngForm" (ngSubmit)="onUpdate()">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Full Name</mat-label>
+        <input matInput name="name" [(ngModel)]="userData.name" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" [(ngModel)]="userData.email" disabled />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile</mat-label>
+        <input matInput name="mobile" [(ngModel)]="userData.mobile" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput type="date" name="dob" [(ngModel)]="userData.dob" (change)="calculateAge(userData.dob)" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" [value]="userData.age" readonly />
+      </mat-form-field>
+
+      <!-- Profile Picture -->
+      <div class="image-upload">
+        <label>
+          <i class="fa fa-image"></i> Choose Profile Picture
+          <input type="file" hidden (change)="onImagePicked($event)" />
+        </label>
+        <div class="image-preview" *ngIf="imagePreview">
+          <img [src]="imagePreview" alt="Profile Preview" />
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <button mat-raised-button color="primary" type="submit">
+        <i class="fa fa-save"></i> Update
+      </button>
+      <button mat-stroked-button color="warn" type="button" (click)="logout()">
+        <i class="fa fa-sign-out"></i> Logout
+      </button>
+    </form>
+  </mat-card>
+</div>
